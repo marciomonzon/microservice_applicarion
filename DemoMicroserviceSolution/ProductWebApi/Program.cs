@@ -10,10 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var dbHost = "localhost";
-var dbName = "dms_product";
-var dbPassword = "P@ssw0rd";
-
+var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
+var dbName = Environment.GetEnvironmentVariable("DB_NAME");
+var dbPassword = Environment.GetEnvironmentVariable("DB_ROOT_PASSWORD");
 var connectionString = $"server={dbHost};port=3306;database={dbName};user=root;password={dbPassword}";
 builder.Services.AddDbContext<ProductDbContext>(option => option.UseMySQL(connectionString));
 
