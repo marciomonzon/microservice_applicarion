@@ -10,5 +10,5 @@ This Application includes 3 Api's: <br>
 
 <br>
 
-***Made with .NET 6 <br>
-***Docker and Docker-Compose.
+Made with .NET 6 <br>
+Docker and Docker-Compose.
