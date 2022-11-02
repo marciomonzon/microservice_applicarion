@@ -71,3 +71,16 @@ services:
     environment:
       - DB_HOST=orderdb
       - DB_NAME=dms_order
+
+   apigateway:
+    container_name: api-gateway
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - 8001:80
+    networks:
+      - backend
+      - frontend
+
